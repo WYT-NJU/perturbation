@@ -1,0 +1,27 @@
+function [fitresult, gof] = MM(c, v)
+%CREATEFIT(C,V)
+%  Create a fit.
+%
+%  Data for 'untitled fit 1' fit:
+%      X Input : c
+%      Y Output: v
+%  Output:
+%      fitresult : a fit object representing the fit.
+%      gof : structure with goodness-of fit info.
+%
+%  另请参阅 FIT, CFIT, SFIT.
+
+%  由 MATLAB 于 17-Apr-2022 20:51:35 自动生成
+
+
+%% Fit: 'untitled fit 1'.
+[xData, yData] = prepareCurveData( c, v );
+
+% Set up fittype and options.
+ft = fittype( 'a*x/(b+x)', 'independent', 'x', 'dependent', 'y' );
+opts = fitoptions( 'Method', 'NonlinearLeastSquares' );
+opts.Display = 'Off';
+opts.StartPoint = [0.2411104147845 0.859037252997577];
+
+% Fit model to data.
+[fitresult, gof] = fit( xData, yData, ft, opts );
