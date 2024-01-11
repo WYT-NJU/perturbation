@@ -21,7 +21,7 @@ function [fitresult, gof] = MM(c, v)
 ft = fittype( 'a*x/(b+x)', 'independent', 'x', 'dependent', 'y' );
 opts = fitoptions( 'Method', 'NonlinearLeastSquares' );
 opts.Display = 'Off';
-opts.StartPoint = [0.2411104147845 0.859037252997577];
+opts.StartPoint = [30 1];
 
 % Fit model to data.
 [fitresult, gof] = fit( xData, yData, ft, opts );
