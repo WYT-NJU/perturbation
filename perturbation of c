@@ -5,7 +5,7 @@ end
 for j=19:1:36
     c(1,j)=j-18;
 end
-e=[0.001 0.05 0.1];%%误差
+e=[0.01 0.05 0.1];%%误差
 L1=zeros(3,4);L2=zeros(3,4);%%双倒数Km和Vmax误差频数
 M1=zeros(3,4);M2=zeros(3,4);%%米氏Km和Vmax误差频数
 for m=1:1:3
